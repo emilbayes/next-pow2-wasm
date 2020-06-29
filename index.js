@@ -1,0 +1,25 @@
+const wasm = require('./next-pow2.js')()
+
+console.log(wasm.exports.align_i16(0))
+console.log(wasm.exports.align_i16(1))
+console.log(wasm.exports.align_i16(2))
+console.log(wasm.exports.align_i16(7))
+
+console.log(wasm.exports.align_i32(0))
+console.log(wasm.exports.align_i32(1))
+console.log(wasm.exports.align_i32(4))
+console.log(wasm.exports.align_i32(5))
+console.log(wasm.exports.align_i32(7))
+
+console.log(wasm.exports.align_i64(0))
+console.log(wasm.exports.align_i64(1))
+console.log(wasm.exports.align_i64(4))
+console.log(wasm.exports.align_i64(5))
+console.log(wasm.exports.align_i64(7))
+console.log(wasm.exports.align_i64(8))
+console.log(wasm.exports.align_i64(9))
+console.log(wasm.exports.align_i64(33))
+
+console.log(wasm.exports.next_pow2(0, 16))
+console.log(wasm.exports.next_pow2(32, 16))
+console.log(wasm.exports.next_pow2(33, 16))
