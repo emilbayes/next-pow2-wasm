@@ -175,16 +175,16 @@ See the worked example below rounding the value `15` to the next multiple of `8`
 
 ```
   00001111 = 15
-+ 00000111 = +7
++ 00000111 = +7             add N - 1 to propagate low order bits
 ---------------
   00010110 = 22 = 15 + 7    note that 22 is between [16, 24)
 
-- 00001000 = +8
+- 00001000 = +8             negate the factor to create a bit mask
 ---------------
   11111000 = -8 = -(+8)     two's complement, note the leading 1's
 
   11111000 = -8
-& 00010110 = 22
+& 00010110 = 22             mask only the high order bits
 ---------------
   00010000 = 16             recall that `1 & 0 = 0` and `1 & 1 = 1`
 ```
